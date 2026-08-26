@@ -51,7 +51,7 @@ function Projects() {
 
             {/* column 2: title */}
             <div className="md:col-span-5">
-              <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 group-hover:text-[#6d28d9] transition-colors">
+              <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 group-hover:text-brand transition-colors">
                 {project.title}
               </h3>
             </div>

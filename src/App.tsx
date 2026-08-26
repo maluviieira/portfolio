@@ -13,7 +13,7 @@ function App() {
     
       <div className="min-h-screen flex flex-col justify-between py-12">
         <Navbar />
-        <main className="flex-grow"></main>
+        <main className="grow"></main>
         <Hero />
       </div>
 

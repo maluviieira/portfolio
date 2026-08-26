@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react';
 
 function Hero(){
     const containerRef = useRef<HTMLDivElement>(null);
-
     const nameRef = useRef<HTMLHeadingElement>(null);
     const subtitleRef = useRef<HTMLParagraphElement>(null);
     
@@ -27,7 +26,7 @@ function Hero(){
                 malu vieira
             </h1>
             <p ref={subtitleRef} className="text-lg md:text-2xl font-normal ml-1">
-                computer engineering student, frontend dev
+                computer engineering student, full-stack dev
             </p>
         </div>
     </div>
