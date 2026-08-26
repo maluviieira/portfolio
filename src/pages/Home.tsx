@@ -1,6 +1,7 @@
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/ui/Hero";
 import Projects from "@/components/ui/Projects";
+import About from "@/components/ui/About";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
       </div>
       <Projects />
+      <About />
     </div>
   );
 }
