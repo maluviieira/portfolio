@@ -9,5 +9,9 @@
     font-family: 'Inter', sans-serif;
     cursor: url('./assets/kiwi.svg') 16 16, auto;
   }
+  
+  a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"] {
+    cursor: url('./assets/kiwi-hover.svg') 16 16, pointer !important;
+  }
 }
 
