@@ -2,6 +2,7 @@ import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/ui/Hero";
 import Projects from "@/components/ui/Projects";
 import About from "@/components/ui/About";
+import Experience from "@/components/ui/Experience";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </div>
       <Projects />
       <About />
+      <Experience />
     </div>
   );
 }
