@@ -1,5 +1,6 @@
 import Navbar from "@/components/ui/Navbar";
 import { projectsData } from "@/data/projects";
+import TechTag from "@/components/ui/TechTag";
 
 export default function AllProjects() {
   return (
@@ -43,12 +44,7 @@ export default function AllProjects() {
               
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tech.map(tech => (
-                  <span 
-                    key={tech} 
-                    className="px-3 py-1 text-xs tracking-wide border border-zinc-200 bg-zinc-50 rounded-full text-zinc-500 uppercase group-hover:border-brand/30 group-hover:text-brand/80 transition-colors"
-                  >
-                    {tech}
-                  </span>
+                  <TechTag key={tech}>{tech}</TechTag>
                 ))}
               </div>
             </a>

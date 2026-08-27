@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { projectsData } from "@/data/projects";
+import TechTag from "@/components/ui/TechTag";
 
 function Projects() {
   // only show the first 3 projects on the home page
@@ -45,12 +46,7 @@ function Projects() {
               {/* tech stack tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(tech => (
-                  <span 
-                    key={tech} 
-                    className="px-3 py-1 text-xs tracking-wide border border-zinc-300 rounded-full text-zinc-500 uppercase"
-                  >
-                    {tech}
-                  </span>
+                  <TechTag key={tech}>{tech}</TechTag>
                 ))}
               </div>
             </div>

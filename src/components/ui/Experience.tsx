@@ -2,6 +2,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TechTag from "@/components/ui/TechTag";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,12 +97,7 @@ export default function Experience() {
               {exp.tech && exp.tech.length > 0 && (
                 <div className="flex flex-wrap gap-2 pt-2">
                   {exp.tech.map(tech => (
-                    <span 
-                      key={tech} 
-                      className="px-3 py-1 text-xs tracking-wide border border-zinc-300 rounded-full text-zinc-500 uppercase group-hover:border-brand/40 group-hover:text-brand transition-colors"
-                    >
-                      {tech}
-                    </span>
+                    <TechTag key={tech}>{tech}</TechTag>
                   ))}
                 </div>
               )}
