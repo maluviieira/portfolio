@@ -1,15 +1,16 @@
 import Navbar from "@/components/ui/Navbar";
 import { projectsData } from "@/data/projects";
 import TechTag from "@/components/ui/TechTag";
+import Footer from "@/components/ui/Footer";
 
 export default function AllProjects() {
   return (
-    <div className="w-full px-8 md:px-16 bg-white font-sans overflow-x-hidden text-zinc-950 min-h-screen pb-24">
-      <div className="pt-12 pb-24">
+    <div className="w-full px-8 md:px-16 bg-white font-sans overflow-x-hidden text-zinc-950 min-h-screen flex flex-col justify-between">
+      <div className="pt-12">
         <Navbar />
       </div>
       
-      <main className="w-full mt-8">
+      <main className="w-full mt-16 grow mb-24">
         {/* header */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-zinc-950">
@@ -51,6 +52,7 @@ export default function AllProjects() {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
