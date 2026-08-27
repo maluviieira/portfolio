@@ -19,6 +19,9 @@ function Navbar() {
           <Link to="/#about" className="hover:text-brand-hover transition-colors">
             about me
           </Link>
+          <Link to="/#experience" className="hover:text-brand-hover transition-colors">
+            experience
+          </Link>
           <Link to="/#contacts" className="hover:text-brand-hover transition-colors">
             contacts
           </Link>

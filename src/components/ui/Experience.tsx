@@ -1,3 +1,10 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const experiences = [
   {
     company: "Capgemini Engineering",
@@ -27,8 +34,28 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const containerRef = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    const items = gsap.utils.toArray<HTMLElement>('.experience-item');
+    
+    items.forEach((item) => {
+      gsap.from(item, {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+  }, { scope: containerRef });
+
   return (
-    <section id="experience" className="w-full py-24 border-t border-zinc-300">
+    <section id="experience" ref={containerRef} className="w-full py-24 border-t border-zinc-300">
       <div className="mb-16 md:mb-24">
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-zinc-950">
           experience
@@ -38,7 +65,7 @@ export default function Experience() {
       {/* Timeline Container */}
       <div className="relative border-l border-zinc-200 ml-4 md:ml-6 space-y-16 pb-8">
         {experiences.map((exp, index) => (
-          <div key={index} className="relative pl-8 md:pl-12 group">
+          <div key={index} className="experience-item relative pl-8 md:pl-12 group">
             
             {/* Timeline Dot */}
             <div className="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-zinc-300 group-hover:bg-brand transition-colors duration-300 z-10"></div>
