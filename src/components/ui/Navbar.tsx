@@ -22,7 +22,7 @@ function Navbar() {
           <Link to="/#experience" className="hover:text-brand-hover transition-colors">
             experience
           </Link>
-          <Link to="/#contacts" className="hover:text-brand-hover transition-colors">
+          <Link to="/#contact" className="hover:text-brand-hover transition-colors">
             contact
           </Link>
         </div>
