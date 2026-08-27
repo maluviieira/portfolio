@@ -1,4 +1,5 @@
 import meImage from "@/assets/me.png";
+import cvFile from "@/assets/CV.pdf";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -76,11 +77,29 @@ export default function About() {
             </p>
           </div>
           
-          {/* decorative dots - pensando se fica  */}
-          <div className="flex gap-3 mt-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand transition-transform group-hover:scale-150"></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-brand/60 transition-transform delay-75 group-hover:scale-150"></span>
-            <span className="w-1.5 h-1.5 rounded-full bg-brand/30 transition-transform delay-150 group-hover:scale-150"></span>
+          {/* view cv button */}
+          <div className="flex items-center gap-8 mt-8">
+            <a 
+              href={cvFile} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group relative border border-zinc-300 px-10 py-5 text-xs  tracking-widest text-zinc-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white 2xl:px-14 2xl:py-7 2xl:text-sm"
+            >
+              <span className="flex items-center gap-3">
+                view cv
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 hover:rotate-[135deg]">
+                  <path d="M7 17L17 7"/>
+                  <path d="M7 7h10v10"/>
+                </svg>
+              </span>
+            </a>
+
+            {/* decorative dots - pensando se fica  */}
+            <div className="flex gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand transition-transform group-hover:scale-150"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-brand/60 transition-transform delay-75 group-hover:scale-150"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-brand/30 transition-transform delay-150 group-hover:scale-150"></span>
+            </div>
           </div>
         </div>
 
