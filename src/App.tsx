@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import AllProjects from "./pages/AllProjects";
 import ProjectDetail from "./pages/ProjectDetail";
 import ScrollToTop from "./components/ui/ScrollToTop";
-import './App.css'
+
 
 function App() {
   return (
