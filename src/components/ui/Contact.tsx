@@ -51,7 +51,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="w-full py-24 border-t border-zinc-300">
+    <section id="contact" className="w-full pt-32 pb-24 border-t border-zinc-300">
       <div className="mb-16 md:mb-24">
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-zinc-950">
           say hi!

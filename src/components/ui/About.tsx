@@ -29,7 +29,7 @@ export default function About() {
   }, { scope: containerRef });
 
   return (
-    <section id="about" ref={containerRef} className="w-full py-24">
+    <section id="about" ref={containerRef} className="w-full pt-32 pb-24">
       
       {/* section header */}
       <div className="mb-16 md:mb-24">
