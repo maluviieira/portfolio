@@ -8,7 +8,7 @@ function Projects() {
   const featuredProjects = projectsData.slice(0, 3);
 
   return (
-    <section id="projects" className="w-full pt-32 pb-24">
+    <section id="projects" className="w-full pt-32 pb-16">
       
       {/* section header */}
       <div className="mb-16">
