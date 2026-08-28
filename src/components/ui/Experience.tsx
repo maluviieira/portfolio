@@ -69,10 +69,10 @@ export default function Experience() {
           <div key={index} className="experience-item relative pl-8 md:pl-12 group">
             
             {/* Timeline Dot */}
-            <div className="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-zinc-300 group-hover:bg-brand transition-colors duration-300 z-10"></div>
+            <div className="absolute -left-1.25 top-2 w-2.25 h-2.25 rounded-full bg-zinc-300 group-hover:bg-brand transition-colors duration-300 z-10"></div>
             
             {/* Outline Pulse on Hover */}
-            <div className="absolute -left-[9px] top-[4px] w-[17px] h-[17px] rounded-full border border-brand/0 group-hover:border-brand/40 group-hover:scale-125 transition-all duration-500"></div>
+            <div className="absolute -left-2.25 top-1 w-4.25 h-4.25 rounded-full border border-brand/0 group-hover:border-brand/40 group-hover:scale-125 transition-all duration-500"></div>
 
             {/* Content */}
             <div className="flex flex-col xl:flex-row xl:items-baseline xl:justify-between w-full mb-4 md:mb-6">

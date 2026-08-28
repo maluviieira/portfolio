@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { projectsData } from "@/data/projects";
 import Navbar from "@/components/ui/Navbar";
@@ -13,12 +13,14 @@ export default function ProjectDetail() {
   
   const [activeImage, setActiveImage] = useState<string | undefined>(images[0]);
   const [thumbnailStartIndex, setThumbnailStartIndex] = useState(0);
+  const [prevId, setPrevId] = useState(id);
 
-  // Ensure activeImage updates if the user navigates between projects directly
-  useEffect(() => {
+  // Ensure state resets cleanly if the user navigates directly between projects
+  if (id !== prevId) {
+    setPrevId(id);
     setActiveImage(images[0]);
     setThumbnailStartIndex(0);
-  }, [id, project]);
+  }
 
   if (!project) {
     return <Navigate to="/projects" replace />;
@@ -37,7 +39,7 @@ export default function ProjectDetail() {
         
         {/* Back Link */}
         <div className="mb-12 max-w-7xl mx-auto w-full">
-          <Link to="/projects" className="inline-flex items-center gap-2 text-zinc-500 hover:text-brand transition-colors font-medium tracking-tight uppercase text-xs tracking-widest">
+          <Link to="/projects" className="inline-flex items-center gap-2 text-zinc-500 hover:text-brand transition-colors font-medium tracking-tight uppercase text-xs">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-translate-x-1">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
@@ -78,7 +80,7 @@ export default function ProjectDetail() {
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="group inline-flex items-center gap-3 border border-zinc-950 px-10 py-5 text-xs font-bold tracking-widest text-zinc-950 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
+                className="group inline-flex items-center gap-3 border border-zinc-300 px-10 py-5 text-xs tracking-widest text-zinc-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
               >
                 Visit Project
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
@@ -130,7 +132,7 @@ export default function ProjectDetail() {
                           key={idx}
                           onClick={() => setActiveImage(img)}
                           style={{ flex: "0 0 calc(33.3333% - 0.3333rem)" }}
-                          className={`aspect-[4/3] bg-zinc-50 overflow-hidden transition-all duration-300 border-2 ${activeImage === img ? 'border-brand opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-zinc-300'}`}
+                          className={`aspect-4/3 bg-zinc-50 overflow-hidden transition-all duration-300 border-2 ${activeImage === img ? 'border-brand opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-zinc-300'}`}
                         >
                           <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-contain p-1" />
                         </button>
