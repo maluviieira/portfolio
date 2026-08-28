@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "@/components/ui/Button";
 
 export default function Contact() {
   const [time, setTime] = useState("");
@@ -95,26 +96,23 @@ export default function Contact() {
             </div>
 
             <div className="mt-4 flex">
-              <button 
+              <Button 
                 type="submit"
                 disabled={status === "submitting" || status === "success"}
-                className="group relative border border-zinc-300 px-10 py-5 text-xs tracking-widest text-zinc-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span className="flex items-center gap-3">
-                  {status === "submitting" ? "SENDING..." : status === "success" ? "MESSAGE SENT" : "SEND MESSAGE"}
-                  {(status === "idle" || status === "error") && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                      <line x1="22" y1="2" x2="11" y2="13"></line>
-                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
-                  )}
-                  {status === "success" && (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  )}
-                </span>
-              </button>
+                {status === "submitting" ? "SENDING..." : status === "success" ? "MESSAGE SENT" : "SEND MESSAGE"}
+                {(status === "idle" || status === "error") && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                )}
+                {status === "success" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                )}
+              </Button>
               {status === "error" && (
                 <span className="text-red-500 text-sm ml-4 self-center">Oops! Something went wrong.</span>
               )}

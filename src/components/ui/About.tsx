@@ -1,5 +1,6 @@
 import meImage from "@/assets/me.png";
 import cvFile from "@/assets/CV.pdf";
+import Button from "@/components/ui/Button";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -79,20 +80,18 @@ export default function About() {
           
           {/* view cv button */}
           <div className="flex items-center gap-8 mt-8">
-            <a 
+            <Button 
               href={cvFile} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="group relative border border-zinc-300 px-10 py-5 text-xs  tracking-widest text-zinc-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white 2xl:px-14 2xl:py-7 2xl:text-sm"
+              className="2xl:px-14 2xl:py-7 2xl:text-sm"
             >
-              <span className="flex items-center gap-3">
-                view cv
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <path d="M7 17L17 7"/>
-                  <path d="M7 7h10v10"/>
-                </svg>
-              </span>
-            </a>
+              view cv
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                <path d="M7 17L17 7"/>
+                <path d="M7 7h10v10"/>
+              </svg>
+            </Button>
 
             {/* decorative dots - pensando se fica  */}
             <div className="flex gap-3">

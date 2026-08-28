@@ -4,6 +4,7 @@ import { projectsData } from "@/data/projects";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import TechTag from "@/components/ui/TechTag";
+import Button from "@/components/ui/Button";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -76,18 +77,17 @@ export default function ProjectDetail() {
             </div>
 
             <div>
-              <a 
+              <Button 
                 href={project.link} 
                 target="_blank" 
-                rel="noopener noreferrer" 
-                className="group inline-flex items-center gap-3 border border-zinc-300 px-10 py-5 text-xs tracking-widest text-zinc-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
+                rel="noopener noreferrer"
               >
                 Visit Project
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
                   <path d="M7 17L17 7"/>
                   <path d="M7 7h10v10"/>
                 </svg>
-              </a>
+              </Button>
             </div>
           </div>
 

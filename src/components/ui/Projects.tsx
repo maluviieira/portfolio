@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { projectsData } from "@/data/projects";
 import TechTag from "@/components/ui/TechTag";
+import Button from "@/components/ui/Button";
 
 function Projects() {
   // only show the first 3 projects on the home page
@@ -60,18 +61,13 @@ function Projects() {
 
       {/* see more button */}
       <div className="mt-16 flex justify-end">
-        <Link 
-          to="/projects" 
-          className="group relative inline-flex border border-zinc-300 px-10 py-5 text-xs tracking-widest text-zinc-600 uppercase transition-all duration-500 hover:border-brand hover:bg-brand hover:text-white"
-        >
-          <span className="flex items-center gap-3">
-            View all projects
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
-        </Link>
+        <Button to="/projects">
+          View all projects
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </Button>
       </div>
 
     </section>
