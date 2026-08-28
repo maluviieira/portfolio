@@ -12,10 +12,12 @@ export default function ProjectDetail() {
   const images = project?.photopath || [];
   
   const [activeImage, setActiveImage] = useState<string | undefined>(images[0]);
+  const [thumbnailStartIndex, setThumbnailStartIndex] = useState(0);
 
   // Ensure activeImage updates if the user navigates between projects directly
   useEffect(() => {
     setActiveImage(images[0]);
+    setThumbnailStartIndex(0);
   }, [id, project]);
 
   if (!project) {
@@ -34,7 +36,7 @@ export default function ProjectDetail() {
         </div>
         
         {/* Back Link */}
-        <div className="mb-12">
+        <div className="mb-12 max-w-7xl mx-auto w-full">
           <Link to="/projects" className="inline-flex items-center gap-2 text-zinc-500 hover:text-brand transition-colors font-medium tracking-tight uppercase text-xs tracking-widest">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-translate-x-1">
               <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -45,10 +47,10 @@ export default function ProjectDetail() {
         </div>
 
         {/* Content Grid */}
-        <div className="w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <div className="w-full max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Text Info */}
-          <div className={`flex flex-col ${images.length > 0 ? "lg:col-span-7" : "lg:col-span-12 max-w-4xl"}`}>
+          <div className={`flex flex-col ${images.length === 0 ? "lg:col-span-2 max-w-4xl" : ""}`}>
             <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-zinc-950 mb-8">
               {project.title}
             </h1>
@@ -88,7 +90,7 @@ export default function ProjectDetail() {
 
           {/* Right Column: Interactive Gallery (Only renders if photopath has images) */}
           {images.length > 0 && (
-            <div className="lg:col-span-5 flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
               
               {/* Main Big Image */}
               <div className="w-full bg-zinc-50 border border-zinc-200 overflow-hidden">
@@ -103,16 +105,48 @@ export default function ProjectDetail() {
               
               {/* Thumbnails (Only render if there are multiple images) */}
               {images.length > 1 && (
-                <div className="grid grid-cols-3 gap-4">
-                  {images.map((img: string, idx: number) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveImage(img)}
-                      className={`w-full aspect-[4/3] bg-zinc-50 overflow-hidden transition-all duration-300 border-2 ${activeImage === img ? 'border-brand opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-zinc-300'}`}
+                <div className="flex items-center gap-2 relative">
+                  
+                  {/* Left Arrow (only if more than 3 images) */}
+                  {images.length > 3 && (
+                    <button 
+                      onClick={() => setThumbnailStartIndex(Math.max(0, thumbnailStartIndex - 3))}
+                      disabled={thumbnailStartIndex === 0}
+                      className={`flex-none p-2 border transition-colors aspect-square flex items-center justify-center ${thumbnailStartIndex === 0 ? 'text-zinc-300 border-zinc-100 cursor-not-allowed bg-zinc-50' : 'text-zinc-600 border-zinc-200 hover:border-brand hover:text-brand bg-white'}`}
                     >
-                      <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-contain p-1" />
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                  ))}
+                  )}
+
+                  {/* Inner Sliding Track */}
+                  <div className="grow overflow-hidden relative">
+                    <div 
+                      className="flex transition-transform duration-500 ease-in-out gap-2"
+                      style={{ transform: `translateX(calc(-${(thumbnailStartIndex / 3) * 100}% - ${(thumbnailStartIndex / 3) * 0.5}rem))` }}
+                    >
+                      {images.map((img: string, idx: number) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveImage(img)}
+                          style={{ flex: "0 0 calc(33.3333% - 0.3333rem)" }}
+                          className={`aspect-[4/3] bg-zinc-50 overflow-hidden transition-all duration-300 border-2 ${activeImage === img ? 'border-brand opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-zinc-300'}`}
+                        >
+                          <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-contain p-1" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Arrow (only if more than 3 images) */}
+                  {images.length > 3 && (
+                    <button 
+                      onClick={() => setThumbnailStartIndex(Math.min(images.length - 1, thumbnailStartIndex + 3))}
+                      disabled={thumbnailStartIndex + 3 >= images.length}
+                      className={`flex-none p-2 border transition-colors aspect-square flex items-center justify-center ${thumbnailStartIndex + 3 >= images.length ? 'text-zinc-300 border-zinc-100 cursor-not-allowed bg-zinc-50' : 'text-zinc-600 border-zinc-200 hover:border-brand hover:text-brand bg-white'}`}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                  )}
                 </div>
               )}
 
