@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full px-6 md:px-16 py-10 flex justify-between items-start z-50">
+    <nav className="fixed top-0 left-0 w-full px-6 md:px-16 py-4 flex justify-between items-center z-50 bg-white/95 backdrop-blur-md border-b border-zinc-200 transition-all">
       {/* purple asterisk */}
-      <div className="flex-none">
-        <Link to="/" className="text-brand text-[4rem] font-medium leading-none block hover:opacity-80 transition-opacity">
+      <div className="flex-none flex items-center h-full">
+        <Link to="/" className="text-brand text-[4rem] font-medium leading-none block hover:opacity-80 transition-opacity translate-y-2">
           *
         </Link>
       </div>
