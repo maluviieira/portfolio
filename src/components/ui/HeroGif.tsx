@@ -32,16 +32,18 @@ export default function HeroGif() {
     return () => clearInterval(interval);
   }, []);
 
-  const currentImg = imageConfig[currentIndex];
-
   return (
     // fixed bounding box prevents layout shifting when aspect ratios differ
-    <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center pointer-events-none select-none">
-      <img 
-        src={currentImg.src} 
-        alt="Malu's interests" 
-        className={`w-full h-full object-contain opacity-90 ${currentImg.scale}`}
-      />
+    <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative flex items-center justify-center pointer-events-none select-none">
+      {/* map over all images and render them stacked. This forces the browser to preload them immediately, preventing any flickering on the first cycle */}
+      {imageConfig.map((img, index) => (
+        <img 
+          key={index}
+          src={img.src} 
+          alt={`malu's interests frame ${index + 1}`} 
+          className={`absolute inset-0 w-full h-full object-contain transition-none ${img.scale} ${index === currentIndex ? "opacity-90 z-10" : "opacity-0 z-0"}`}
+        />
+      ))}
     </div>
   );
 }
