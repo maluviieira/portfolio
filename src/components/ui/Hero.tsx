@@ -20,13 +20,13 @@ function Hero(){
     }, {scope : containerRef});
 
     return (
-        <div ref={containerRef} className="min-h-screen w-full flex items-end px-6 md:px-20 pb-20 md:pb-32">
+        <div ref={containerRef} className="w-full flex items-end px-6 md:px-20 pb-12 md:pb-24">
         <div className="flex flex-col gap-y-2">
             <h1 ref={nameRef} className="text-6xl md:text-9xl font-semibold tracking-tighter leading-none">
                 malu vieira
             </h1>
             <p ref={subtitleRef} className="text-lg md:text-2xl font-normal ml-1">
-                computer engineering student, full-stack dev
+                computer engineering student, full-stack developer
             </p>
         </div>
     </div>
