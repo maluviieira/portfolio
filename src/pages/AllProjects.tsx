@@ -1,4 +1,5 @@
 import Navbar from "@/components/ui/Navbar";
+import { Link } from "react-router-dom";
 import { projectsData } from "@/data/projects";
 import TechTag from "@/components/ui/TechTag";
 import Footer from "@/components/ui/Footer";
@@ -10,7 +11,7 @@ export default function AllProjects() {
         <Navbar />
       </div>
       
-      <main className="w-full mt-16 grow mb-24">
+      <main className="w-full mt-24 grow mb-24">
         {/* header */}
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-zinc-950">
@@ -24,12 +25,10 @@ export default function AllProjects() {
         {/* grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project) => (
-            <a 
-              href={project.link} 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to={`/projects/${project.id}`}
               key={project.id}
-              className="group flex flex-col justify-between p-8 border border-zinc-300 hover:border-brand transition-colors h-full"
+              className="group flex flex-col justify-between p-8 border border-zinc-300 hover:border-brand transition-colors h-full cursor-pointer bg-white"
             >
               <div>
                 <div className="text-sm text-zinc-400 font-mono mb-4">
@@ -48,7 +47,7 @@ export default function AllProjects() {
                   <TechTag key={tech}>{tech}</TechTag>
                 ))}
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </main>

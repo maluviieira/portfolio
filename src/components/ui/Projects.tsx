@@ -20,38 +20,41 @@ function Projects() {
       <div className="w-full border-b border-zinc-300">
         {featuredProjects.map((project) => (
       
-          <div 
+          <Link 
+            to={`/projects/${project.id}`}
             key={project.id} 
-            className="group border-t border-zinc-300 px-4 py-8 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-4 items-start hover:bg-zinc-50 transition-colors"
+            className="group block border-t border-zinc-300 px-4 py-8 md:py-12 hover:bg-zinc-50 transition-colors cursor-pointer"
           >
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-4 items-start">
             
-            {/* column 1: number */}
-            <div className="md:col-span-1 text-sm text-zinc-400 font-mono mt-2">
-              [{project.id}]
-            </div>
-
-            {/* column 2: title */}
-            <div className="md:col-span-5">
-              <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 group-hover:text-brand transition-colors">
-                {project.title}
-              </h3>
-            </div>
-
-            {/* column 3: description*/}
-            <div className="md:col-span-6 flex flex-col gap-6">
-              <p className="text-zinc-600 md:max-w-md text-base md:text-lg leading-relaxed">
-                {project.description}
-              </p>
-              
-              {/* tech stack tags */}
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map(tech => (
-                  <TechTag key={tech}>{tech}</TechTag>
-                ))}
+              {/* column 1: number */}
+              <div className="md:col-span-1 text-sm text-zinc-400 font-mono mt-2">
+                [{project.id}]
               </div>
-            </div>
 
-          </div>
+              {/* column 2: title */}
+              <div className="md:col-span-5">
+                <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 group-hover:text-brand transition-colors">
+                  {project.title}
+                </h3>
+              </div>
+
+              {/* column 3: description*/}
+              <div className="md:col-span-6 flex flex-col gap-6">
+                <p className="text-zinc-600 md:max-w-md text-base md:text-lg leading-relaxed">
+                  {project.description}
+                </p>
+                
+                {/* tech stack tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map(tech => (
+                    <TechTag key={tech}>{tech}</TechTag>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </Link>
         ))}
       </div>
 
