@@ -92,13 +92,7 @@ export default function About() {
                 <path d="M7 7h10v10"/>
               </svg>
             </Button>
-
-            {/* decorative dots - pensando se fica  */}
-            <div className="flex gap-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand transition-transform group-hover:scale-150"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-brand/60 transition-transform delay-75 group-hover:scale-150"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-brand/30 transition-transform delay-150 group-hover:scale-150"></span>
-            </div>
+            
           </div>
         </div>
 
