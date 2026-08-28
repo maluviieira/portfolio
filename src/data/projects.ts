@@ -22,7 +22,7 @@ export const projectsData: Project[] = [
     description: "freelance platform centered around the art community.",
     tech: ["HTML", "CSS", "JavaScript", "PHP", "SQLite"],
     link: "https://github.com/maluviieira/artflow",
-    bigdesc: "in an era where artificial intelligence is rapidly transforming creative industries, many fear that AI-generated art will overshadow human creativity. 'artflow' was created as a response to these concerns—a platform that celebrates and empowers human creativity rather than replacing it. our mission is to create a marketplace where artists can: showcase their unique talents and creative services; connect directly with clients who value authentic, human-made art; maintain control over their work, pricing, and client interactions; build sustainable careers in the creative economy",
+    bigdesc: "in an era where artificial intelligence is rapidly transforming creative industries, many fear that AI-generated art will overshadow human creativity. 'artflow' was created as a response to these concerns—a platform that celebrates and empowers human creativity rather than replacing it. our mission is to create a marketplace where artists can: showcase their unique talents and creative services; connect directly with clients who value authentic, human-made art; maintain control over their work, pricing, and client interactions.",
     photopath: ["/projects/artflow/0.png", "/projects/artflow/8.png", "/projects/artflow/1.png", "/projects/artflow/2.png", "/projects/artflow/3.png", "/projects/artflow/4.png", "/projects/artflow/5.png", "/projects/artflow/6.png", "/projects/artflow/7.png"]
   
   },
@@ -42,14 +42,16 @@ export const projectsData: Project[] = [
     title: "portfolio",
     description: "this website!",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    link: "https://github.com/yourusername/project4"
+    link: "https://github.com/maluviieira/portfolio"
   },
   {
     id: "05",
     title: "whack a diglett",
     description: "whack-a-mole inspired game in Minix.",
     tech: ["C"],
-    link: "https://github.com/yourusername/project5"
+    link: "https://github.com/maluviieira/whack-a-diglett",
+    bigdesc: "whack a diglett is a 2D game built from scratch for the Minix operating system, featuring real-time graphics, user input handling, and smooth animations. the game challenges players to whack appearing Diglett characters within a time limit to achieve the highest score possible.",
+    photopath: ["/projects/whack-a-diglett/1.png", "/projects/whack-a-diglett/2.png", "/projects/whack-a-diglett/3.png", "/projects/whack-a-diglett/4.png"]
   },
   {
     id: "06",
@@ -60,14 +62,14 @@ export const projectsData: Project[] = [
   },
   {
     id: "07",
-    title: "whack a diglett",
+    title: "spring prairie",
     description: "whack-a-mole inspired game in Minix.",
     tech: ["C"],
     link: "https://github.com/yourusername/project5"
   },
   {
     id: "08",
-    title: "whack a diglett",
+    title: "bnnuvin",
     description: "whack-a-mole inspired game in Minix.",
     tech: ["C"],
     link: "https://github.com/yourusername/project5"
