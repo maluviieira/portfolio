@@ -52,7 +52,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="w-full pt-32 pb-24 border-t border-zinc-300">
+    <section id="contact" className="w-full pt-32 pb-16 border-t border-zinc-300">
       <div className="mb-16 md:mb-24">
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-zinc-950">
           say hi!
@@ -78,6 +78,19 @@ export default function Contact() {
                 required
                 className="w-full bg-transparent border-b border-zinc-300 py-3 text-xl text-zinc-900 focus:outline-none focus:border-brand transition-colors placeholder:text-zinc-300"
                 placeholder="what's your name?"
+              />
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <label htmlFor="email" className="text-sm font-bold text-zinc-950 uppercase tracking-widest flex items-center gap-2">
+                Email <span className="text-zinc-400 font-normal tracking-normal text-xs">(optional)</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                className="w-full bg-transparent border-b border-zinc-300 py-3 text-xl text-zinc-900 focus:outline-none focus:border-brand transition-colors placeholder:text-zinc-300"
+                placeholder="where can i reach you?"
               />
             </div>
 
