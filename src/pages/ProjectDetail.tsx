@@ -62,12 +62,13 @@ export default function ProjectDetail() {
             </div>
 
             <div className={`text-lg md:text-xl text-zinc-700 leading-relaxed space-y-8 mb-16 ${images.length > 0 ? "max-w-xl" : "max-w-none"}`}>
-              <p>
-                {project.description}
-              </p>
-              {project.bigdesc && (
+              {project.bigdesc ? (
                 <p className="whitespace-pre-wrap">
                   {project.bigdesc}
+                </p>
+              ) : (
+                <p>
+                  {project.description}
                 </p>
               )}
             </div>
