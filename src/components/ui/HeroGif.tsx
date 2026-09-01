@@ -4,7 +4,7 @@ import filme from "@/assets/gif/filme.png";
 import livros from "@/assets/gif/livros.png";
 import paoacucar from "@/assets/gif/paoacucar.png";
 import vinil from "@/assets/gif/vinil.png";
-import mouth from "@/assets/gif/mouth.png";
+// import mouth from "@/assets/gif/mouth.png";
 import fone from "@/assets/gif/fone.png";
 import lirio from "@/assets/gif/lirio.png";
 
