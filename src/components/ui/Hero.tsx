@@ -26,7 +26,7 @@ function Hero(){
                 malu vieira
             </h1>
             <p ref={subtitleRef} className="text-lg md:text-2xl font-normal ml-1">
-                computer engineering student, full-stack developer
+                computer engineering student, frontend developer
             </p>
         </div>
     </div>

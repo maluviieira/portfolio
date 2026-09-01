@@ -17,7 +17,6 @@ const imageConfig = [
   { src: paoacucar, scale: "scale-120" },
   { src: vinil, scale: "scale-100" },
   { src: fone, scale: "scale-80" },
-  { src: mouth, scale: "scale-60" },
 ];
 
 export default function HeroGif() {
